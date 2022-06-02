@@ -1,5 +1,13 @@
 {
   "coc.preferences.formatOnSaveFiletypes": [ "css","javascript","html","js","vue" ],
+
+  "prettier.semi": true,
+  "prettier.jsxSingleQuote": true,
+  "prettier.bracketSpacing": true,
+  "prettier.jsxBracketSameLine": true,
+  "prettier.arrowParens": "always",
+  "prettier.printWidth": 500,
+
   "languageserver": {
     "go": {
       "command": "gopls",
