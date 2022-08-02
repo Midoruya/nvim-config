@@ -25,6 +25,9 @@ Plug 'p00f/nvim-ts-rainbow'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'vim-scripts/vim-auto-save'
 Plug 'preservim/tagbar'
+Plug 'xiyaowong/nvim-transparent'
+Plug 'Civitasv/cmake-tools.nvim'
+Plug 'robert-oleynik/cmake-nvim'
 
 call plug#end()
 
@@ -42,6 +45,21 @@ let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 :lua require('nvim-terminal').setup()
 lua << END
+require("transparent").setup({
+  enable = true, -- boolean: enable transparent
+  extra_groups = { -- table/string: additional groups that should be cleared
+    -- In particular, when you set it to 'all', that means all available groups
+
+    -- example of akinsho/nvim-bufferline.lua
+    "BufferLineTabClose",
+    "BufferlineBufferSelected",
+    "BufferLineFill",
+    "BufferLineBackground",
+    "BufferLineSeparator",
+    "BufferLineIndicatorSelected",
+  },
+  exclude = {}, -- table: groups you don't want to clear
+})
 require('lualine').setup {
   options = {
     icons_enabled = true,
